@@ -2,6 +2,8 @@ class Solution:
     def minPathSum(self, grid: list[list[int]]) -> int:
         n = len(grid)
         m = len(grid[0]) # assuming every row has the same number of columns
+        if n == 1 and m == 1:
+            return grid[0][0]
         dp = [ [0]*m for _ in range(n)]
         dp[0][0] = grid[0][0]
         for row in range(n):
